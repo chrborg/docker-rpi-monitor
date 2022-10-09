@@ -17,9 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    #- name: Build the Docker image
-    #  run: docker build -t chrborg/rpi-monitor:latest
-    #- name: Login in Docker Hub
-    #  run: docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
-    #- name: Publish the Docker image
-    #  run: docker push chrborg/rpi-monitor:latest
+    - name: Build the Docker image
+      run: docker build -t chrborg/rpi-monitor:latest .
+    - name: Login in Docker Hub
+      run: docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+    - name: Publish the Docker image
+      run: docker push chrborg/rpi-monitor:latest

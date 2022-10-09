@@ -1,18 +1,21 @@
 version: '3'
 services:
   rpi-monitor:
-    image: michaelmiklis/rpi-monitor:latest
+    image: chrborg/rpi-monitor:latest
     container_name: rpi-monitor
     volumes:
-      - /opt/vc:/opt/vc
-      - /boot:/boot
-      - /sys:/dockerhost/sys:ro
-      - /etc:/dockerhost/etc:ro
-      - /proc:/dockerhost/proc:ro
-      - /usr/lib:/dockerhost/usr/lib:ro
+      - "/opt/vc:/opt/vc"
+      - "/boot:/boot"
+      - "/sys:/dockerhost/sys:ro"
+      - "/etc:/dockerhost/etc:ro"
+      - "/proc:/dockerhost/proc:ro"
+      - "/usr/lib:/dockerhost/usr/lib:ro"
+      # This is a placeholder, so configure according to your drive mounting point location
+      #-"/mnt/HDD:/mnt/HDD:ro"
     devices:
       - "/dev/vchiq:/dev/vchiq" 
-      - "/dev/vcsm:/dev/vcsm"  
+      - "/dev/vcsm:/dev/vcsm"
+      - "/dev/sda1:/dev/sda1"
     restart: unless-stopped
     ports:
       - 8888:8888

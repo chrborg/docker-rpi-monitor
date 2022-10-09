@@ -11,7 +11,7 @@ services:
       - "/proc:/dockerhost/proc:ro"
       - "/usr/lib:/dockerhost/usr/lib:ro"
       # This is a placeholder, so configure according to your drive mounting point location
-      #-"/mnt/HDD:/mnt/HDD:ro"
+      #-"/mnt/hdd:/mnt/hdd:ro"
     devices:
       - "/dev/vchiq:/dev/vchiq" 
       - "/dev/vcsm:/dev/vcsm"
